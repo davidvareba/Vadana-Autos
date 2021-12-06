@@ -1,0 +1,36 @@
+{
+    "vadana-autos" : {
+      "cars" : {
+        "-Mq5DvZkxsR0hgAXq2rW" : {
+          "car_ID" : "911",
+          "firebaseKey" : "-Mq5DvZkxsR0hgAXq2rW",
+          "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5swBENgK6Umti8uY8_sbRIeV8BlPw2B8cWw&usqp=CAU",
+          "make" : "Mercedes Benz",
+          "mileage" : "12000",
+          "model" : "GLC 300 4Matic",
+          "new" : "true",
+          "price" : "55000",
+          "user_id" : "007",
+          "year" : "2018",
+          "zip" : "37211"
+        }
+      },
+      "contact" : {
+        "-Mq5FmdxS-w7z0CCmHXe" : {
+          "car_id" : "911",
+          "description" : "I like this car, how much?",
+          "email" : "davidvareba@gmail.com",
+          "name" : "David Vareba",
+          "phone" : "615-944-0000"
+        }
+      },
+      "favoriteCars" : {
+        "-Mq5F31yf43Q37nI-aBl" : {
+          "car_id" : "true",
+          "firebaseKey" : "-Mq5F31yf43Q37nI-aBl",
+          "user_id" : "007"
+        }
+      }
+    }
+  }
+  
