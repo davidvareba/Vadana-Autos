@@ -1,0 +1,68 @@
+{
+  "vadana-autos" : {
+    "cars" : {
+      "-Mq5DvZkxsR0hgAXq2rW" : {
+        "car_ID" : "911",
+        "firebaseKey" : "-Mq5DvZkxsR0hgAXq2rW",
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5swBENgK6Umti8uY8_sbRIeV8BlPw2B8cWw&usqp=CAU",
+        "make" : "Mercedes Benz",
+        "mileage" : "12000",
+        "model" : "GLC 300 4Matic",
+        "new" : "true",
+        "price" : "55000",
+        "user_id" : "007",
+        "year" : "2018",
+        "zip" : "37211"
+      },
+      "-MqHGQzwjI88k229-PYO" : {
+        "car_ID" : "002",
+        "firebaseKey" : "-MqHGQzwjI88k229-PYO",
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnmyf-ljpXRUZPEC2vB8ocBiop0kB3y0bETQ&usqp=CAU",
+        "make" : "Range Rover",
+        "mileage" : "2000",
+        "model" : "Velar",
+        "price" : "55000",
+        "year" : "2020",
+        "zip" : "37211"
+      },
+      "-MqHGkVNWyIlpispuCqR" : {
+        "car_ID" : "003",
+        "firebaseKey" : "-MqHGkVNWyIlpispuCqR",
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfwlUov-D3ia9Lfb7GpmMZkq3R1E_K_whyQ&usqp=CAU",
+        "make" : "Rolls Royce",
+        "mileage" : "2070",
+        "model" : "Cullinan",
+        "price" : "355000",
+        "year" : "2020",
+        "zip" : "37211"
+      },
+      "-MqHGqnNpiC0ZLi9JT3z" : {
+        "car_ID" : "004",
+        "firebaseKey" : "-MqHGqnNpiC0ZLi9JT3z",
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GmW0XOT7lmu72ter_1Uvi4kvSicwd6YiaQ&usqp=CAU",
+        "make" : "Bentley",
+        "mileage" : "3070",
+        "model" : "Mulsanne",
+        "price" : "345000",
+        "year" : "2020",
+        "zip" : "37211"
+      }
+    },
+    "contact" : {
+      "-Mq5FmdxS-w7z0CCmHXe" : {
+        "car_id" : "911",
+        "description" : "I like this car, how much?",
+        "email" : "davidvareba@gmail.com",
+        "name" : "David Vareba",
+        "phone" : "615-944-0000"
+      }
+    },
+    "favoriteCars" : {
+      "-Mq5F31yf43Q37nI-aBl" : {
+        "car_id" : "true",
+        "firebaseKey" : "-Mq5F31yf43Q37nI-aBl",
+        "user_id" : "007"
+      }
+    }
+  }
+}
