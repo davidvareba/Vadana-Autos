@@ -11,7 +11,7 @@ const initialState = {
   favorite: false,
 };
 
-export default function SellCarForm({ obj, userId }) {
+export default function ItemForm({ obj, userId }) {
   const [formInput, setFormInput] = useState(initialState);
   const history = useHistory();
 
@@ -114,7 +114,7 @@ export default function SellCarForm({ obj, userId }) {
   );
 }
 
-SellCarForm.propTypes = {
+ItemForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
@@ -126,6 +126,6 @@ SellCarForm.propTypes = {
   userId: PropTypes.string.isRequired,
 };
 
-SellCarForm.defaultProps = {
+ItemForm.defaultProps = {
   obj: {},
 };

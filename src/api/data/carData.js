@@ -5,12 +5,11 @@ const baseURL = firebaseConfig.databaseURL;
 
 const getCars = (user) => new Promise((resolve, reject) => {
   axios
-    .get(`${baseURL}/cars.json?orderBy="uid"&equalTo="${user}"`)
+    .get(`${baseURL}/cars.json?orderBy="uid"&equalTo="$${user}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
 
-// then((response) => resolve(Object.values(response.data))) is converting to obj, so instead pass
 const getCarsFB = (fbKey) => new Promise((resolve, reject) => {
   axios
     .get(`${baseURL}/cars/${fbKey}.json`)
@@ -20,10 +19,10 @@ const getCarsFB = (fbKey) => new Promise((resolve, reject) => {
 
 const createCar = (object) => new Promise((resolve, reject) => {
   axios
-    .post(`${baseURL}/cars.json`, object)
+    .post(`${baseURL}/items.json`, object)
     .then((response) => {
       axios
-        .patch(`${baseURL}/cars/${response.data.name}.json`, {
+        .patch(`${baseURL}/items/${response.data.name}.json`, {
           firebaseKey: response.data.name,
         })
         .then(() => getCars(object.uid).then(resolve));
@@ -47,46 +46,16 @@ const updateCar = (itemObj) => new Promise((resolve, reject) => {
 
 const updateFav = (itemObj) => new Promise((resolve, reject) => {
   axios
-    .patch(`${baseURL}/favoriteCars/${itemObj.firebaseKey}.json`, itemObj)
+    .patch(`${baseURL}/favorite/${itemObj.firebaseKey}.json`, itemObj)
     .then(resolve)
-    .catch(reject);
-});
-
-const getContact = (itemID) => new Promise((resolve, reject) => {
-  axios
-    .get(`${baseURL}/contact.json?orderBy="itemID"&equalTo="${itemID}"`)
-    .then((response) => resolve(Object.values(response.data)))
-    .catch(reject);
-});
-
-const createContact = (object) => new Promise((resolve, reject) => {
-  axios
-    .post(`${baseURL}/contact.json`, object)
-    .then((response) => {
-      axios
-        .patch(`${baseURL}/contact/${response.data.name}.json`, {
-          firebaseKey: response.data.name,
-        })
-        .then(() => getContact(object.itemID).then(resolve));
-    })
-    .catch(reject);
-});
-
-const deleteContact = (noteObj) => new Promise((resolve, reject) => {
-  axios
-    .delete(`${baseURL}/contact/${noteObj.firebaseKey}.json`)
-    .then(() => resolve(getContact(noteObj.itemID)))
     .catch(reject);
 });
 
 export {
   getCars,
-  createCar,
   deleteCar,
   updateCar,
   getCarsFB,
   updateFav,
-  getContact,
-  createContact,
-  deleteContact,
+  createCar,
 };

@@ -18,13 +18,15 @@ export default function SignIn({ user }) {
           <h1>Vadana Autos</h1>
           <p>...driving you to your dreams</p>
           <img className="vadana" alt="profileImage" src="img/vadana-autos.jpg" />
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={signInUser}
-          >
-            Sign In
-          </button>
+          <p>
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={signInUser}
+            >
+              Sign In
+            </button>
+          </p>
         </div>
       )}
     </>

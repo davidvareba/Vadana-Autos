@@ -7,7 +7,7 @@ function Navigation() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand fas fa-home" to="/">
             Home
           </Link>
           <button
@@ -24,40 +24,35 @@ function Navigation() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" to="/about">
+                <Link className="nav-link active" to="/new">
                   New Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/about">
-                  Old Cars
+                <Link className="nav-link active" to="/used">
+                  Used Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/stuff">
+                <Link className="nav-link active" to="/all">
                   All Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/about">
+                <Link className="nav-link active" to="/favorite">
                   Favorite Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/new">
-                  Sell Your Car
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/new">
-                  Contact
+                <Link className="nav-link active" to="/sell">
+                  Sell My Cars
                 </Link>
               </li>
               <li className="nav-item">
                 <button
                   onClick={signOutUser}
                   type="button"
-                  className="nav-link active btn btn-link"
+                  className="nav-button active btn btn-link"
                 >
                   Logout
                 </button>
