@@ -1,49 +1,51 @@
 {
-  "vadana-autos" : {
     "cars" : {
       "-Mq5DvZkxsR0hgAXq2rW" : {
-        "car_ID" : "911",
+        "car_id" : "911",
         "firebaseKey" : "-Mq5DvZkxsR0hgAXq2rW",
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5swBENgK6Umti8uY8_sbRIeV8BlPw2B8cWw&usqp=CAU",
+        "imageUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5swBENgK6Umti8uY8_sbRIeV8BlPw2B8cWw&usqp=CAU",
         "make" : "Mercedes Benz",
         "mileage" : "12000",
         "model" : "GLC 300 4Matic",
         "new" : "true",
         "price" : "55000",
-        "user_id" : "007",
+        "uid" : "1189",
         "year" : "2018",
         "zip" : "37211"
       },
       "-MqHGQzwjI88k229-PYO" : {
-        "car_ID" : "002",
+        "car_id" : "002",
         "firebaseKey" : "-MqHGQzwjI88k229-PYO",
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnmyf-ljpXRUZPEC2vB8ocBiop0kB3y0bETQ&usqp=CAU",
+        "imageUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnmyf-ljpXRUZPEC2vB8ocBiop0kB3y0bETQ&usqp=CAU",
         "make" : "Range Rover",
         "mileage" : "2000",
         "model" : "Velar",
         "price" : "55000",
+        "uid" : "11885",
         "year" : "2020",
         "zip" : "37211"
       },
       "-MqHGkVNWyIlpispuCqR" : {
-        "car_ID" : "003",
+        "car_id" : "003",
         "firebaseKey" : "-MqHGkVNWyIlpispuCqR",
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfwlUov-D3ia9Lfb7GpmMZkq3R1E_K_whyQ&usqp=CAU",
+        "imageUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfwlUov-D3ia9Lfb7GpmMZkq3R1E_K_whyQ&usqp=CAU",
         "make" : "Rolls Royce",
         "mileage" : "2070",
         "model" : "Cullinan",
         "price" : "355000",
+        "uid" : "415",
         "year" : "2020",
         "zip" : "37211"
       },
       "-MqHGqnNpiC0ZLi9JT3z" : {
-        "car_ID" : "004",
+        "car_id" : "004",
         "firebaseKey" : "-MqHGqnNpiC0ZLi9JT3z",
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GmW0XOT7lmu72ter_1Uvi4kvSicwd6YiaQ&usqp=CAU",
+        "imageUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GmW0XOT7lmu72ter_1Uvi4kvSicwd6YiaQ&usqp=CAU",
         "make" : "Bentley",
         "mileage" : "3070",
         "model" : "Mulsanne",
         "price" : "345000",
+        "uid" : "419",
         "year" : "2020",
         "zip" : "37211"
       }
@@ -59,10 +61,10 @@
     },
     "favoriteCars" : {
       "-Mq5F31yf43Q37nI-aBl" : {
-        "car_id" : "true",
+        "car_id" : "9991",
         "firebaseKey" : "-Mq5F31yf43Q37nI-aBl",
-        "user_id" : "007"
+        "uid" : "007"
       }
     }
   }
-}
+

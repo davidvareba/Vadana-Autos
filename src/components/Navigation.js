@@ -24,12 +24,12 @@ function Navigation() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" to="/new">
+                <Link className="nav-link active" to="/newCars">
                   New Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/used">
+                <Link className="nav-link active" to="/usedCars">
                   Used Cars
                 </Link>
               </li>
@@ -39,20 +39,25 @@ function Navigation() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/favorite">
+                <Link className="nav-link active" to="/post">
+                  Post Your Car
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/favoriteCars">
                   Favorite Cars
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/sell">
-                  Sell My Cars
+                <Link className="nav-link active" to="/contact">
+                  Contact
                 </Link>
               </li>
               <li className="nav-item">
                 <button
                   onClick={signOutUser}
                   type="button"
-                  className="nav-button active btn btn-link"
+                  className="nav-link active btn btn-link"
                 >
                   Logout
                 </button>

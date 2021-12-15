@@ -3,59 +3,103 @@ import firebaseConfig from '../apiKeys';
 
 const baseURL = firebaseConfig.databaseURL;
 
-const getCars = (user) => new Promise((resolve, reject) => {
+const getItems = (user) => new Promise((resolve, reject) => {
   axios
-    .get(`${baseURL}/cars.json?orderBy="uid"&equalTo="$${user}"`)
+    .get(`${baseURL}/cars.json?orderBy="uid"&equalTo="${user}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
 
-const getCarsFB = (fbKey) => new Promise((resolve, reject) => {
+// then((response) => resolve(Object.values(response.data))) is converting to obj, so instead pass
+const getItemsFB = (fbKey) => new Promise((resolve, reject) => {
   axios
     .get(`${baseURL}/cars/${fbKey}.json`)
     .then((response) => resolve(response.data))
     .catch(reject);
 });
 
-const createCar = (object) => new Promise((resolve, reject) => {
+const createItem = (object) => new Promise((resolve, reject) => {
   axios
-    .post(`${baseURL}/items.json`, object)
+    .post(`${baseURL}/cars.json`, object)
     .then((response) => {
       axios
-        .patch(`${baseURL}/items/${response.data.name}.json`, {
+        .patch(`${baseURL}/cars/${response.data.name}.json`, {
           firebaseKey: response.data.name,
         })
-        .then(() => getCars(object.uid).then(resolve));
+        .then(() => getItems(object.uid).then(resolve));
     })
     .catch(reject);
 });
 
-const deleteCar = (itemObj) => new Promise((resolve, reject) => {
+const deleteItem = (itemObj) => new Promise((resolve, reject) => {
   axios
     .delete(`${baseURL}/cars/${itemObj.firebaseKey}.json`)
-    .then(() => getCars(itemObj.uid).then(resolve))
+    .then(() => getItems(itemObj.uid).then(resolve))
     .catch(reject);
 });
 
-const updateCar = (itemObj) => new Promise((resolve, reject) => {
+const updateItem = (itemObj) => new Promise((resolve, reject) => {
   axios
     .patch(`${baseURL}/cars/${itemObj.firebaseKey}.json`, itemObj)
-    .then(() => getCars(itemObj.uid).then(resolve))
+    .then(() => getItems(itemObj.uid).then(resolve))
     .catch(reject);
 });
 
 const updateFav = (itemObj) => new Promise((resolve, reject) => {
   axios
-    .patch(`${baseURL}/favorite/${itemObj.firebaseKey}.json`, itemObj)
+    .patch(`${baseURL}/cars/${itemObj.firebaseKey}.json`, itemObj)
     .then(resolve)
     .catch(reject);
 });
 
+const getNotes = (itemID) => new Promise((resolve, reject) => {
+  axios
+    .get(`${baseURL}/notes.json?orderBy="itemID"&equalTo="${itemID}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+const createNote = (object) => new Promise((resolve, reject) => {
+  axios
+    .post(`${baseURL}/notes.json`, object)
+    .then((response) => {
+      axios
+        .patch(`${baseURL}/notes/${response.data.name}.json`, {
+          firebaseKey: response.data.name,
+        })
+        .then(() => getNotes(object.itemID).then(resolve));
+    })
+    .catch(reject);
+});
+
+const deleteNote = (noteObj) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${baseURL}/notes/${noteObj.firebaseKey}.json`)
+    .then(() => resolve(getNotes(noteObj.itemID)))
+    .catch(reject);
+});
+
+const getFavCars = () => new Promise((resolve, reject) => {
+  axios.get(`${baseURL}/favoriteCars.json?orderBy="uid"&equalTo=true`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+const favCars = (updateObj) => new Promise((resolve, reject) => {
+  axios.patch(`${baseURL}/favoriteCars/${updateObj.firebaseKey}.json`, updateObj)
+    .then(() => getFavCars().then(resolve))
+    .catch(reject);
+});
+
 export {
-  getCars,
-  deleteCar,
-  updateCar,
-  getCarsFB,
+  getItems,
+  createItem,
+  deleteItem,
+  updateItem,
+  getItemsFB,
   updateFav,
-  createCar,
+  getNotes,
+  createNote,
+  deleteNote,
+  getFavCars,
+  favCars,
 };
