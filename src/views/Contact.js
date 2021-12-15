@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { updateCar, createCar } from '../api/data/carData';
+import { updateContact, createContact } from '../api/data/contactData';
 
 const initialState = {
-  name: '',
+  car_id: '',
   description: '',
-  uid: '',
-  imageUrl: '',
-  favorite: false,
+  name: '',
+  email: false,
+  phone: '',
+
 };
 
-export default function ItemForm({ obj, userId }) {
+export default function Contact({ obj, userId }) {
   const [formInput, setFormInput] = useState(initialState);
   const history = useHistory();
 
   useEffect(() => {
     if (obj.firebaseKey) {
       setFormInput({
-        name: obj.name,
+        car_id: obj.car_id,
         firebaseKey: obj.firebaseKey,
         description: obj.description,
-        imageUrl: obj.imageUrl,
-        uid: obj.uid,
-        favorite: obj.favorite,
+        name: obj.name,
+        email: obj.email,
+        phone: obj.phone,
       });
     }
   }, [obj]);
@@ -45,22 +46,51 @@ export default function ItemForm({ obj, userId }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       // update the item
-      updateCar(formInput).then(() => {
+      updateContact(formInput).then(() => {
         resetForm();
         history.push('/');
       });
     } else {
-      createCar({ ...formInput, uid: userId }).then(() => {
+      createContact({ ...formInput, uid: userId }).then(() => {
         resetForm();
       });
     }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <h1 className="form-label visually-hidden">userId {userId}</h1>
       <div className="m-3">
-        <label htmlFor="name">
+        <label htmlFor="car_id">
+          Car ID
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="car_id"
+          name="car_id"
+          placeholder="Enter Car ID"
+          value={formInput.make}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="m-3">
+        <label htmlFor="model">
+          Description
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="description"
+          name="description"
+          placeholder="Enter Description"
+          value={formInput.model}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="m-3">
+        <label htmlFor="year">
           Name
         </label>
         <input
@@ -68,39 +98,38 @@ export default function ItemForm({ obj, userId }) {
           className="form-control"
           id="name"
           name="name"
-          placeholder="Enter Item Name"
-          value={formInput.name}
+          placeholder="Please enter your name"
+          value={formInput.year}
           onChange={handleChange}
           required
         />
       </div>
       <div className="m-3">
-        <label htmlFor="imageUrl">
-          Image
+        <label htmlFor="mileage">
+          Email
         </label>
         <input
+          type="text"
           className="form-control"
-          type="url"
-          id="imageUrl"
-          rows="3"
-          name="imageUrl"
-          placeholder="Enter Item URL"
-          value={formInput.imageUrl}
+          id="email"
+          name="email"
+          placeholder="Enter Your Email"
+          value={formInput.mileage}
           onChange={handleChange}
           required
         />
       </div>
       <div className="m-3">
-        <label htmlFor="description">
-          Description
+        <label htmlFor="price">
+          Phone
         </label>
-        <textarea
+        <input
+          type="text"
           className="form-control"
-          id="description"
-          rows="3"
-          name="description"
-          placeholder="Enter Description..."
-          value={formInput.description}
+          id="phone"
+          name="phone"
+          placeholder="Enter Your Phone number"
+          value={formInput.price}
           onChange={handleChange}
           required
         />
@@ -114,18 +143,18 @@ export default function ItemForm({ obj, userId }) {
   );
 }
 
-ItemForm.propTypes = {
+Contact.propTypes = {
   obj: PropTypes.shape({
-    name: PropTypes.string,
+    car_id: PropTypes.string,
     description: PropTypes.string,
     firebaseKey: PropTypes.string,
-    uid: PropTypes.string,
-    imageUrl: PropTypes.string,
-    favorite: PropTypes.bool,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
   }),
   userId: PropTypes.string.isRequired,
 };
 
-ItemForm.defaultProps = {
+Contact.defaultProps = {
   obj: {},
 };

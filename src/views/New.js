@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SellForm from '../components/SellForm';
+import CarForm from '../components/CarForm';
 
 export default function New({ userId }) {
   return (
     <>
-      <h1 className="text-center">Contact</h1>
-      <SellForm userId={userId} />
+      <h1 className="text-center">Post Your Car For Sale!</h1>
+      <CarForm userId={userId} />
     </>
   );
 }

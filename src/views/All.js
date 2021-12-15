@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../components/Card';
-import { getCars } from '../api/data/carData';
+import { getItems } from '../api/data/carData';
 
-export default function Stuff({ userId }) {
+export default function All({ userId }) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
-    getCars(userId).then((cardsArray) => {
+    getItems(userId).then((cardsArray) => {
       if (isMounted) setCards(cardsArray);
     });
     return () => {
@@ -20,7 +20,7 @@ export default function Stuff({ userId }) {
     <div className="container">
       {cards ? (
         <>
-          <h1 className="text-center">My Projects</h1>
+          <h1 className="text-center">Vadana Autos</h1>
           <div className="d-flex flex-wrap">
             {cards.map((card) => (
               <Card key={card.firebaseKey} card={card} setCards={setCards} />
@@ -34,6 +34,6 @@ export default function Stuff({ userId }) {
   );
 }
 
-Stuff.propTypes = {
+All.propTypes = {
   userId: PropTypes.string.isRequired,
 };
