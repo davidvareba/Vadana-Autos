@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../components/Card';
-import { getFavCars } from '../api/data/carData';
+import { getItems } from '../api/data/carData';
 
 export default function FavoriteCars({ userId }) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
-    getFavCars(userId).then((cardsArray) => {
-      if (isMounted) setCards(cardsArray);
+    getItems(userId).then((cardsArray) => {
+      console.warn(cardsArray);
+      if (isMounted) setCards(cardsArray.filter((obj) => obj.favorite === true));
     });
     return () => {
       isMounted = false;
@@ -20,7 +21,7 @@ export default function FavoriteCars({ userId }) {
     <div className="container">
       {cards ? (
         <>
-          <h1 className="text-center">Favorite Cars</h1>
+          <h1 className="text-center">Vadana Autos</h1>
           <div className="d-flex flex-wrap">
             {cards.map((card) => (
               <Card key={card.firebaseKey} card={card} setCards={setCards} />
