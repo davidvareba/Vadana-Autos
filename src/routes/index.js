@@ -20,8 +20,6 @@ export default function Routes({ userId }) {
         <Route exact path="/post" component={() => <New userId={userId} />} />
         <Route exact path="/newCars" component={() => <NewCars userId={userId} />} />
         <Route exact path="/usedCars" component={() => <UsedCars userId={userId} />} />
-        <Route exact path="/favoriteCars" component={() => <FavoriteCars userId={userId} />} />
-        <Route exact path="/usedCars" component={() => <UsedCars userId={userId} />} />
         <Route exact path="/contact" component={() => <Contact userId={userId} />} />
         <Route exact path="/detail/:firebaseKey" component={Detail} />
         <Route
@@ -33,6 +31,11 @@ export default function Routes({ userId }) {
           exact
           path="/all"
           component={() => <All userId={userId} />}
+        />
+        <Route
+          exact
+          path="/favoriteCars"
+          component={() => <FavoriteCars userId={userId} />}
         />
       </Switch>
     </div>
