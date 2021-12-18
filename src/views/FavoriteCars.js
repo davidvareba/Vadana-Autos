@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../components/Card';
 import { getFavCars } from '../api/data/carData';
 
-export default function All({ userId }) {
+export default function FavoriteCars({ userId }) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -34,6 +34,6 @@ export default function All({ userId }) {
   );
 }
 
-All.propTypes = {
+FavoriteCars.propTypes = {
   userId: PropTypes.string.isRequired,
 };

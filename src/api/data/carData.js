@@ -79,13 +79,16 @@ const deleteNote = (noteObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// FILTER FAVORITE CARS
 const getFavCars = () => new Promise((resolve, reject) => {
-  axios.get(`${baseURL}/favoriteCars.json?orderBy="uid"&equalTo=true`)
+  axios.get(`${baseURL}/cars.json?orderBy="favorite"&equalTo=true`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
+
+// UPDATE FAVROITE AUTHOR
 const favCars = (updateObj) => new Promise((resolve, reject) => {
-  axios.patch(`${baseURL}/favoriteCars/${updateObj.firebaseKey}.json`, updateObj)
+  axios.patch(`${baseURL}/cars/${updateObj.firebaseKey}.json`, updateObj)
     .then(() => getFavCars().then(resolve))
     .catch(reject);
 });
