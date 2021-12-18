@@ -7,7 +7,7 @@ import { deleteItem, updateItem } from '../api/data/carData';
 export default function Card({ card, setCards }) {
   const [checked, setChecked] = useState();
 
-  const handleChange = () => {
+  const handleChange = (event) => {
     setChecked(!checked);
     const favcard = {
       firebaseKey: card.firebaseKey,
@@ -18,8 +18,8 @@ export default function Card({ card, setCards }) {
       price: card.price,
       imageUrl: card.imageUrl,
       uid: card.uid,
-      new: !card.new,
-      favorite: !card.favorite,
+      new: card.new,
+      favorite: event.target.checked,
     };
     updateItem(favcard).then(setCards);
   };

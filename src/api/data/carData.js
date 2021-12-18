@@ -86,7 +86,7 @@ const getFavCars = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// UPDATE FAVROITE AUTHOR
+// UPDATE FAVORITE CARS
 const favCars = (updateObj) => new Promise((resolve, reject) => {
   axios.patch(`${baseURL}/cars/${updateObj.firebaseKey}.json`, updateObj)
     .then(() => getFavCars().then(resolve))
