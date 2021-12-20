@@ -18,7 +18,7 @@ export default function Card({ card, setCards }) {
       price: card.price,
       imageUrl: card.imageUrl,
       uid: card.uid,
-      new: card.new,
+      new: event.target.checked,
       favorite: event.target.checked,
     };
     updateItem(favcard).then(setCards);
@@ -52,20 +52,19 @@ export default function Card({ card, setCards }) {
             />
             Like this Car?
           </label>
+          <div className="d-grid gap-2 mt-3">
+            <Link to={`/edit/${card.firebaseKey}`} className="btn btn-warning btn-block">
+              Edit Car
+            </Link>
+            <button
+              onClick={() => handleClick('delete')}
+              className="btn btn-danger"
+              type="button"
+            >
+              DELETE
+            </button>
+          </div>
         </div>
-        <Link to={`/edit/${card.firebaseKey}`} className="btn btn-warning">
-          Edit Car
-        </Link>
-        <Link to={`/detail/${card.firebaseKey}`} className="btn btn-info">
-          View Car Details
-        </Link>
-        <button
-          onClick={() => handleClick('delete')}
-          className="btn btn-danger"
-          type="button"
-        >
-          DELETE
-        </button>
       </div>
     </div>
   );

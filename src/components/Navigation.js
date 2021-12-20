@@ -5,7 +5,7 @@ import { signOutUser } from '../api/auth';
 function Navigation() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav variant="tabs" className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand fas fa-home" to="/">
             Home

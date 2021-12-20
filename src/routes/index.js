@@ -9,7 +9,7 @@ import Edit from '../views/Edit';
 import NewCars from '../views/NewCars';
 import UsedCars from '../views/UsedCars';
 import FavoriteCars from '../views/FavoriteCars';
-import Contact from '../views/Contact';
+import Contact from '../components/Contact';
 
 export default function Routes({ userId }) {
   return (

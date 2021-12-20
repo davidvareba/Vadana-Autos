@@ -20,7 +20,7 @@ export default function All({ userId }) {
     <div className="container">
       {cards ? (
         <>
-          <h1 className="text-center">Vadana Autos</h1>
+          <h1 className="text-center">Our Inventory</h1>
           <div className="d-flex flex-wrap">
             {cards.map((card) => (
               <Card key={card.firebaseKey} card={card} setCards={setCards} />
