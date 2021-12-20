@@ -32,7 +32,7 @@ export default function Card({ card, setCards }) {
 
   return (
     <div>
-      <div className="card" style={{ width: '18rem', margin: '3px' }}>
+      <div className="card" style={{ width: '18rem', margin: '10px' }}>
         <CardImg
           alt="Card image"
           src={card.imageUrl}
