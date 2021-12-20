@@ -92,6 +92,19 @@ const favCars = (updateObj) => new Promise((resolve, reject) => {
     .then(() => getFavCars().then(resolve))
     .catch(reject);
 });
+// FILTER NEW CARS
+const getNewCars = () => new Promise((resolve, reject) => {
+  axios.get(`${baseURL}/cars.json?orderBy="new"&equalTo=true`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+// UPDATE NEW CARS
+const newCars = (updateObj) => new Promise((resolve, reject) => {
+  axios.patch(`${baseURL}/cars/${updateObj.firebaseKey}.json`, updateObj)
+    .then(() => getNewCars().then(resolve))
+    .catch(reject);
+});
 
 export {
   getItems,
@@ -105,4 +118,7 @@ export {
   deleteNote,
   getFavCars,
   favCars,
+  getNewCars,
+  newCars,
+
 };

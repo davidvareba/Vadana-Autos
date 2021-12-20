@@ -175,6 +175,15 @@ export default function CarForm({ obj, userId }) {
         />
       </div>
       <div className="m-3">
+        <label htmlFor="cars">Car Type  </label><br />
+
+        <select name="cars" id="cars">
+          <option value="blank"> </option>
+          <option value="new">New</option>
+          <option value="used">Used</option>
+        </select>
+      </div>
+      <div className="m-3">
         <label htmlFor="imageUrl">
           Image
         </label>
