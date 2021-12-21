@@ -1,9 +1,19 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
 
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+
+}
 body {
   background-color: $favColor !important;
-  margin: 15px;
+  margin: 0;
+  max-width: 100%;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
@@ -18,9 +28,6 @@ body {
   text-align: center!important;
   background-color: green;
 }
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 2276px;
-}
-.card {
-  border-spacing: 0ch;
+.vadana {
+  width: max-content;
 }

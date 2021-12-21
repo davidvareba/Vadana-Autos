@@ -14,10 +14,7 @@ export default function SignIn({ user }) {
           />
         </div>
       ) : (
-        <div className="text-center mt-5">
-          <h1>Vadana Autos</h1>
-          <p>...driving you to your dreams</p>
-          <img className="vadana" alt="profileImage" src="img/vadana-autos.jpg" />
+        <div className="sign-in mt-5" align="center">
           <p>
             <button
               type="button"
@@ -27,6 +24,7 @@ export default function SignIn({ user }) {
               Sign In
             </button>
           </p>
+          <img className="vadana" alt="profileImage" src="img/vadana-autos.jpg" />
         </div>
       )}
     </>
