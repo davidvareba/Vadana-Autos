@@ -8,10 +8,11 @@ This template includes all the dependencies and set up needed for you to work wi
 ## Topics
 - [Get Started](#get-started)
 - [Starting the Project](#starting-the-project)
-- [Other important tidbits](#other-important-tidbits)
+- [Loom Presentation](https://www.loom.com/share/640795cfaaea4da5bd23e1255c670105)
     - [React Dev Tools](#react-dev-tools)
     - [Using axios](#using-axios)
     - [Deploying on Netlify](#deploying-on-netlify)
+
 ___
 
 ## Get Started
