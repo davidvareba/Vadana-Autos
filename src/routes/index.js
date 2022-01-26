@@ -16,7 +16,7 @@ export default function Routes({ userId }) {
     <div>
       <Switch>
         console.warn({userId});
-        <Route exact path="/" component={() => <All userId={userId} />} />
+        <Route exact path="/all" component={() => <All userId={userId} />} />
         <Route exact path="/post" component={() => <New userId={userId} />} />
         <Route exact path="/newCars" component={() => <NewCars userId={userId} />} />
         <Route exact path="/usedCars" component={() => <UsedCars userId={userId} />} />
